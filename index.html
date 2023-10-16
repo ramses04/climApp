@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>ClimApp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/bootstrap.css">
+</head>
+
+<body>
+    <div class="container mainCont justify-content-sm-center pb-2 rounded text-white text-center bg-secondary">
+        <div class="collapse collapse-horizontal rounded menu-fav" id="navbarToggle">
+            <div class="p-4">
+                <h4>Ciudades Favoritas</h4>
+                <h5>ciudad 1</h5>
+                <h5>ciudad 2</h5>
+                <h5>ciudad 3</h5>
+            </div>
+        </div>
+        <div id="error" class="msjError hideError">
+            <div class="alert alert-danger mb-0 fade show" role="alert">
+                <p id="errorMsj" class="py-0 my-0">No conozco la ciudad asdsa :(</p>
+                <button id="closeError" type="button" class="close cerrarError" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="row py-2 py-sm-4">
+            <div class="col-12 col-sm-1">
+                <nav class="py-0 navbar navbar-dark">
+                    <button id="navTogller" class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <img src="assets/images/list.png" class="mx-auto d-block invert" alt="menu">
+                    </button>
+                </nav>
+            </div>
+            <div class="col-10 col-sm-9 pr-0 mt-5 mt-sm-0">
+                <div class="input-group">
+                    <input id="searchBox" type="text" class="form-control" placeholder="Elige una ciudad"
+                        aria-label="Elige una ciudad" aria-describedby="basic-addon2">
+                    <div class="input-group-append fav">
+                        <button id="favCity" class="btn favEmpty" type="button">
+                            <img src="assets/images/star.png" class="mx-auto d-block" alt="favoritos">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 col-sm-2 px-0 mt-5 mt-sm-0">
+                <button id="searchBtn" class="btn" type="button">
+                    <img src="assets/images/search.png" class="d-block invert" alt="buscar">
+                </button>
+            </div>
+        </div>
+        <div class="row pt-5 pb-5 pt-sm-3">
+            <div class="col-6 col-sm-5 my-auto">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 id="cityMain"></h1>
+                    </div>
+                    <div class="col-12">
+                        <h2 id="tempMain"></h2>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center mainInfoText">
+                        <p id="tempMinMain"></p>
+                        <p> / </p>
+                        <p id="tempMaxMain"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-7">
+                <img id="weatherImgMain" src="assets/images/Clear.png" class="d-block" alt="imagen clima">
+            </div>
+        </div>
+        <div class="row py-2 py-sm-3">
+            <div class="col-6 col-sm-3">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="assets/images/humidity.png" class="d-block mx-auto imgsMain" alt="img humedad">
+                    </div>
+                    <div class="col-12 py-3 mainInfoText">
+                        <h3 id="humidityMain"></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-3">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="assets/images/wind.png" class="d-block mx-auto imgsMain" alt="img viento">
+                    </div>
+                    <div class="col-12 py-3 mainInfoText">
+                        <h3 id="windMain"></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-3">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="assets/images/sunrise.png" class="d-block mx-auto imgsMain" alt="img amanecer">
+                    </div>
+                    <div class="col-12 py-3 mainInfoText">
+                        <h3 id="sunriseMain"></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-3">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="assets/images/sunset.png" class="d-block mx-auto imgsMain" alt="img atardecer">
+                    </div>
+                    <div class="col-12 py-3 mainInfoText">
+                        <h3 id="sunsetMain"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="forecastItems" class="row pronostico rounded py-4 px-3 my-1 my-sm-3 mx-1 mx-sm-5 text-black">
+            <div class="col-12 col-sm-3 px-1 py-1">
+                <div class="item-pronostico">
+                    <h4>d+1</h4>
+                    <div class="row">
+                        <div class="col-6 col-sm-12">
+                            <img src="assets/images/Clear.png" class="d-block mx-auto pb-3 pt-2 imgCard"
+                                alt="imagen clima">
+                        </div>
+                        <div class="col-6 col-sm-12 pt-3 pt-sm-0">
+                            <h5>min: 19°C</h5>
+                            <h5>max: 25°C</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-3 item-pronostico px-1 py-1">
+                <div class="item-pronostico">
+                    <h4>d+2</h4>
+                    <div class="row">
+                        <div class="col-6 col-sm-12">
+                            <img src="assets/images/Clear.png" class="d-block mx-auto pb-3 pt-2 imgCard"
+                                alt="imagen clima">
+                        </div>
+                        <div class="col-6 col-sm-12 pt-3 pt-sm-0">
+                            <h5>min: 19°C</h5>
+                            <h5>max: 25°C</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-3 item-pronostico px-1 py-1">
+                <div class="item-pronostico">
+                    <h4>d+3</h4>
+                    <div class="row">
+                        <div class="col-6 col-sm-12">
+                            <img src="assets/images/Clear.png" class="d-block mx-auto pb-3 pt-2 imgCard"
+                                alt="imagen clima">
+                        </div>
+                        <div class="col-6 col-sm-12 pt-3 pt-sm-0">
+                            <h5>min: 19°C</h5>
+                            <h5>max: 25°C</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-3 item-pronostico px-1 py-1">
+                <div class="item-pronostico">
+                    <h4>d+4</h4>
+                    <div class="row">
+                        <div class="col-6 col-sm-12">
+                            <img src="assets/images/Clear.png" class="d-block mx-auto pb-3 pt-2 imgCard"
+                                alt="imagen clima">
+                        </div>
+                        <div class="col-6 col-sm-12 pt-3 pt-sm-0">
+                            <h5>min: 19°C</h5>
+                            <h5>max: 25°C</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/jquery-3.2.1.slim.min.js"></script>
+    <script src="assets/popper.min.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

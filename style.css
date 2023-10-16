@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+body {
+    background: #222 !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.mainCont {
+    background: linear-gradient(135deg, #00b6fe, #756bb1);
+    position: relative;
+    z-index: 1;
+    width: 100% !important;
+    max-width: 1000px !important;
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+.msjError {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 180px;
+    margin: 0;
+    z-index: 2;
+    -moz-transition: height 400ms;
+    -ms-transition: height 400ms;
+    -o-transition: height 400ms;
+    -webkit-transition: height 400ms;
+    transition: height 400ms;    
+    overflow: hidden;
+}
+
+.showError {
+    min-height: 60px;
+}
+
+.hideError {
+    height: 0;
+}
+
+#error .cerrarError{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .75rem 1.25rem;
+    color: inherit;
+    font-size: 1.4rem;
+}
+
+.menu-fav {
+    width: 300px;
+    height: 90% !important;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    transition: width 200ms ease;
+    border-radius: 10px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.98);
+    z-index: 2;
+}
+
+.input-group {
+    z-index: 1 !important;
+}
+
+.fav {
+    background-color: white;
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+}
+
+#cityMain, #tempMain {
+    font-size: 3rem;
+}
+
+.mainInfoText, .mainInfoText h3{
+    font-size: 1.75rem !important;
+}
+
+#weatherImgMain {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto !important;
+}
+
+.imgsMain{
+    width: 50% !important;
+}
+
+.pronostico {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.item-pronostico {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+}
+
+.imgCard {
+    width: 50% !important;
+}
+
+#cityMain, #tempMain {
+    font-weight: 600;
+}
+
+#dayCard {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#tempMaxCard, #tempMinCard {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@media (max-width: 576px) {
+    .mainCont {
+        z-index: 1;
+        margin-top: 0;
+    }
+
+    #navTogller {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1 !important;
+    }
+
+    #cityMain, #tempMain {
+        font-size: 2.5rem;
+    }
+
+    .mainInfoText, .mainInfoText h3{
+        font-size: 1.3rem !important;
+    }
+
+    #weatherImgMain {
+        max-width: 130px;
+        margin: 0 !important;
+    }
+
+    .imgsMain{
+        width: 50% !important;
+        max-width: 65px;
+    }
+
+    .imgCard {
+        margin: auto !important;
+        width: 100% !important;
+        max-width: 80px;
+    }
+}
