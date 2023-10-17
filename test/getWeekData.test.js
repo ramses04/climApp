@@ -1,4 +1,4 @@
-import { getWeekData } from '../js/getWeekData';
+import { getWeekData } from '../js/getWeekData.js';
 
 global.fetch = jest.fn();
 

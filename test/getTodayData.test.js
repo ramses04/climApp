@@ -1,4 +1,4 @@
-import { getTodayData } from '../js/getTodayData';
+import { getTodayData } from '../js/getTodayData.js';
 
 describe('getTodayData', () => {
     const API_KEY = "apiKey";

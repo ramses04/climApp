@@ -1,4 +1,4 @@
-import { setWeekData } from '../js/setWeekData';
+import { setWeekData } from '../js/setWeekData.js';
 
 describe('setWeekData', () => {
 
