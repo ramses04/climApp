@@ -1,7 +1,7 @@
-import { getTodayData } from '../js/getTodayData.js';
-import { setTodayData } from '../js/setTodayData.js';
-import { getWeekData } from '../js/getWeekData.js';
-import { setWeekData } from '../js/setWeekData.js';
+import { getTodayData } from './js/getTodayData.js';
+import { setTodayData } from './js/setTodayData.js';
+import { getWeekData } from './js/getWeekData.js';
+import { setWeekData } from './js/setWeekData.js';
 
 const API_KEY = "4203c813e25b8d556c43f0c929952e33";
 const error = document.querySelector('#error');
@@ -21,10 +21,8 @@ async function manageData() {
     try {
         const todayData = await getTodayData(city, API_KEY);
         setTodayData(todayData);
-        console.log(todayData)
         const weekData = await getWeekData(todayData, API_KEY);
         setWeekData(weekData);
-        console.log(weekData)
     } catch (error) {
         console.error(`Fallo buscando los datos de la ciudad: ${city}` , error);
     }

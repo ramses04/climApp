@@ -1,4 +1,4 @@
-import { getWeekData } from '../js/getWeekData';
+import { getWeekData } from '../js/getWeekData.js';
 
 global.fetch = jest.fn();
 
@@ -63,7 +63,7 @@ describe('getWeekData', () => {
         const lat = fakeCoord.coord.lat;
         const lon = fakeCoord.coord.lon;
 
-        expect(fetch).toHaveBeenCalledWith(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
+        expect(fetch).toHaveBeenCalledWith(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
         expect(result.cod).toBe('200');
     });
 
@@ -96,7 +96,7 @@ describe('getWeekData', () => {
         const lat = fakeCoord.coord.lat;
         const lon = fakeCoord.coord.lon;
 
-        expect(fetch).toHaveBeenCalledWith(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
+        expect(fetch).toHaveBeenCalledWith(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
         expect(result).toBe(undefined);
     });
 

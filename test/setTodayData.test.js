@@ -1,4 +1,4 @@
-import { setTodayData } from '../js/setTodayData';
+import { setTodayData } from '../js/setTodayData.js';
 
 describe('setTodayData', () => {
 
