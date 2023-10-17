@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "ClimApp",
+    "short_name": "ClimApp",
+    "lang": "es",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
