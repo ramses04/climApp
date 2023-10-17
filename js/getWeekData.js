@@ -3,7 +3,7 @@ async function getWeekData(datosCoord, API_KEY) {
         const lat = datosCoord.coord.lat;
         const lon = datosCoord.coord.lon;
 
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
         try {
             const json = await response.json();
             if (json.cod != '404')
